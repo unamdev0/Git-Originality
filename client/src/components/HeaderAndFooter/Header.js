@@ -16,11 +16,11 @@ export default class Header extends Component {
   renderLogo = () => {
     if (this.state.showHeader) {
       return (
-        <img src="https://bitemycoin.com/wp-content/uploads/2018/06/GitHub-Logo.png" />
+        <img alt="logo" src="https://bitemycoin.com/wp-content/uploads/2018/06/GitHub-Logo.png" />
       );
     } else {
       return (
-        <img src="https://major.io/wp-content/uploads/2014/08/github.png" />
+        <img alt="logo" src="https://major.io/wp-content/uploads/2014/08/github.png" />
       );
     }
   };
@@ -33,7 +33,7 @@ export default class Header extends Component {
       <div
         className="header_wrapper"
         style={{
-          background: this.state.showHeader ? "rebeccapurple" : "inherit"
+          background: this.state.showHeader ? "black" : "inherit"
         }}
       >
         <div
