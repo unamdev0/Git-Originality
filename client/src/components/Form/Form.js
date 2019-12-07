@@ -10,20 +10,22 @@ export default class Form extends Component {
 
   send = () => {
     Axios.get("/form").then(data => {
-      console.log(data);
-      console.table(data);
+      // if(data!==""){
+      //   <Profile 
+      // }
+      console.log(data)
     });
   };
 
   render() {
     return (
       <div className="form_wrapper">
-        <form action="/form" method="post">
+        <form action="/form" onSubmit={this.send()} method="post">
           Enter Username
           <input className="form_input" type="text" name="username" />
           <input
             className="form_submit"
-            onClick={this.send()}
+            
             type="submit"
             value="Submit"
           />
