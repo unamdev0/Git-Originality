@@ -1,21 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Axios from "axios";
-export default class Form extends Component {
-  state = {
-    username: ""
-  };
-
+class Form extends Component {
   handleChange = event => {
-    this.setState({ username: event.target.value });
-    console.log(this.state);
+    this.props.onAddingUsername(event.target.value);
   };
 
-  handleSubmit = event=> {
+  handleSubmit = event => {
     event.preventDefault();
-    const username = this.state.username;
-    console.log("username",username)
+    const username = this.props.username;
+    console.log("users", this.props.users);
+    console.log("username", username);
     Axios.post("/form", { username }).then(res => {
-      console.log(res);
+      if (res.data) {
+        this.props.onAddingUser(res.data);
+      }
     });
   };
 
@@ -36,3 +35,19 @@ export default class Form extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return { username: state.username, users: state.users };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddingUser: userData =>
+      dispatch({ type: "Adding_user", payload: userData }),
+    onAddingUsername: username => {
+      dispatch({ type: "Adding_username", payload: username });
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
