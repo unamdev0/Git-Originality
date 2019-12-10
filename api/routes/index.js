@@ -4,6 +4,4 @@ const user = require("../api/user");
 
 router.post("/form", user.getApi);
 
-router.get("/form", user.sen);
-
 module.exports = router;
