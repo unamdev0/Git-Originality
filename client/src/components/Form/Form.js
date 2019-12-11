@@ -9,8 +9,6 @@ class Form extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const username = this.props.username;
-    console.log("users", this.props.users);
-    console.log("username", username);
     Axios.post("/form", { username }).then(res => {
       if (res.data) {
         this.props.onAddingUser(res.data);
