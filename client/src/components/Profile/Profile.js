@@ -67,7 +67,7 @@ const Profile = props => {
       <div className="piechart">
       <label style={{ fontSize:'23px', margin:'0 0 10px 20px'}}>Repository Type</label>
       <PieChart width={300} height={200}>
-      <Pie data={repoData} cx={80} cy={75} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
+      <Pie data={repoData} cx={80} cy={75} innerRadius={40} outerRadius={80} fill={getRandomColor()}/>
           <Tooltip />
         </PieChart>
       </div>
