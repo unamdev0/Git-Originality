@@ -2,7 +2,7 @@ import React from "react";
 import './style.css'
 import Header from './components/HeaderAndFooter/Header'
 import Form  from './components/Form/Form'
-import Profile from './components/Profile/Profile'
+import ProfileHOC from './hoc/profileHOC'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="app">
       <Header/>
       <Form/>
-      <Profile/>    
+      <ProfileHOC/>    
     </div>
   );
 }

@@ -26,42 +26,45 @@ const data02 = [
   // { name: 'Group E', value: 3908 }, { name: 'Group F', value: 4800 },
 ];
 
-const Profile=(props)=>{
-  return(
-    <div className="profile_wrapper">
-      <div className="img_src">
-        <img src={props.img} alt="profile picture"/>
-      </div>
-      <p className="userData">
-          Username:{props.username}<br/>
-          Name:{props.name}<br/>
-          About:{props.about}
-        </p>
-        <br/>
-        <br/>
-        <br/>
-    <div className="bargraph" style={{textAlign:"left"}}>
-    <BarChart
-        width={600}
-        height={300}
-        data={props.barData}
 
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="language" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="count" fill={getRandomColor()} />
-      </BarChart>
-    </div >
-    <div className="piechart">
-    <PieChart width={400} height={400}>
-        <Pie dataKey="value" isAnimationActive={true} data={props.pieData} cx={200} cy={200} outerRadius={80} fill={getRandomColor()} label />
-        <Tooltip />
-      </PieChart>
-    </div>
-    </div>
+const Profile=(props)=>{
+  console.log(props)
+  return(
+    // <div className="profile_wrapper">
+    //   <div className="img_src">
+    //     <img src={props.img} alt="profile picture"/>
+    //   </div>
+    //   <p className="userData">
+    //       Username:{props.username}<br/>
+    //       Name:{props.name}<br/>
+    //       About:{props.about}
+    //     </p>
+    //     <br/>
+    //     <br/>
+    //     <br/>
+    // <div className="bargraph" style={{textAlign:"left"}}>
+    // <BarChart
+    //     width={600}
+    //     height={300}
+    //     data={props.barData}
+
+    //   >
+    //     <CartesianGrid strokeDasharray="3 3" />
+    //     <XAxis dataKey="language" />
+    //     <YAxis />
+    //     <Tooltip />
+    //     <Legend />
+    //     <Bar dataKey="count" fill={getRandomColor()} />
+    //   </BarChart>
+    // </div >
+    // <div className="piechart">
+    // <PieChart width={400} height={400}>
+    //     <Pie dataKey="value" isAnimationActive={true} data={props.pieData} cx={200} cy={200} outerRadius={80} fill={getRandomColor()} label />
+    //     <Tooltip />
+    //   </PieChart>
+    // </div>
+    // </div>
+    <div className="profile_wrapper">{props.repoData}</div>
   )
 }
 export default Profile;
