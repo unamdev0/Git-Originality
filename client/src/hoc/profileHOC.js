@@ -7,6 +7,8 @@ class profileHOC extends Component {
 
   languageFormatter = (user) => {
     var languageData;
+    console.log(user)
+    // console.log(Object.keys(user['repoData']))
     languageData = Object.keys(user["language"]).map(language => ({
       language: language,
       count: user["language"][language]
@@ -18,17 +20,17 @@ class profileHOC extends Component {
   render() {
     let data=
       this.props.users.map(user=>{
-        const repoData = {
-          forked: user.forked,
-          original: user.original
-        };
+        const repoData = [
+          {name:'forked', value:user.forked},
+          {name:'original', value: user.original}
+        ];
         const languageData = this.languageFormatter(user);
         return {languageData,repoData,userdata:user.userData}
       })
     console.log(data)
     return(
     data.map((user)=>(
-      <Profile name={user.languageData} userData={user.userdata} repoData={JSON.stringify(user.repoData)} />
+      <Profile languageData={user.languageData} userData={user.userdata} repoData={(user.repoData)} />
     ))
   )}
 }

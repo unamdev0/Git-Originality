@@ -16,8 +16,7 @@
 
 body {
   background: rgba(22, 8, 55, 0.82);
-  height: 1500px;
-}
+  }
 
 .header_wrapper img {
   height: 65px;
@@ -30,9 +29,9 @@ body {
   width: 35%;
   border: solid orange 2px;
   border-radius: 5px;
-  position: absolute;
+  position: relative;
   padding: 50px 90px;
-  margin: 5% 0 0 25%;
+  margin: 15% 0 0 25%;
   font-weight: bold;
   font-family: "PT Sans", sans-serif;
   font-size: xx-large;
@@ -90,20 +89,23 @@ body {
 .profile_wrapper {
   text-align: center;
   color: white;
-  /* width: 45%; */
+  width: 650px;
+  height: 800px;
   border: solid orange 2px;
   border-radius: 5px;
-  position: absolute;
-  margin-top: 30%;
+  position: relative;
+  margin-top: 50px;
   font-weight: bold;
   font-family: "PT Sans", sans-serif;
   font-size: xx-large;
   white-space: nowrap;
+  margin-right: 80px;
+  float: left;
 }
 
 .profile_wrapper .img_src{
-  height: 100px;
-  width: 100px;
+  height: 160px;
+  width: 160px;
   border:2px black solid;
   float: left;
   font-size: small;
@@ -112,8 +114,26 @@ body {
 .profile_wrapper .userData{
   font-size: medium;
   float: left;
+  margin: 53px 0 0 23px;
 }
 
 .profile_wrapper .bargraph{
   font-size: small;
+  margin: 0;
+  float: left;
+  padding: 25px 20px 0 0;
+  display: block;
+}
+.profile_wrapper .biodata_wrapper{
+  display: block;
+  margin: 23px 0 0 23px;
+}
+
+.profile_wrapper .piechart{
+  font-size: small;
+  margin-top: 20px;
+  float: left;
+  text-align:left;
+  padding: 0px 0 0 200px;
+
 }
