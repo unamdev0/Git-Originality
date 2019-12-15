@@ -70,21 +70,6 @@ body {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* .profile_wrapper {
-  background: inherit;
-  display: inline-block;
-  outline: none;
-  margin-top: 55%;
-  margin-left: 100px;
-  color: white;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 60%;
-  text-align: center;
-  position: fixed;
-  font-family: "Roboto Slab", sans-serif;
-} */
 
 .profile_wrapper {
   text-align: center;

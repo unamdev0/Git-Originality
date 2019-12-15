@@ -9,11 +9,8 @@ import {
   Legend,
   PieChart,
   Pie,
-  Sector
-} from "recharts";
+} from "recharts"
 
-const data02 = [{name: 'Group A', value: 2400}, {name: 'Group B', value: 4567},
-                  {name: 'Group C', value: 1398}];
 
 
 function getRandomColor() {
@@ -29,7 +26,6 @@ const Profile = props => {
   const userData = props.userData;
   const repoData =(props.repoData);
   const languageData = props.languageData;
-  console.log(repoData);
   return (
     <div className="profile_wrapper">
       <div className="biodata_wrapper">
@@ -59,7 +55,7 @@ const Profile = props => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis tick={{ fill: "black" }} dataKey="language" />
           <YAxis tick={{ fill: "black" }} />
-          <Tooltip cursor={{ fill: "transparent" }} />
+          <Tooltip isAnimationActive={true} cursor={{ fill: "transparent" }} />
           <Legend />
           <Bar dataKey="count" fill={getRandomColor()} />
         </BarChart>
@@ -68,17 +64,10 @@ const Profile = props => {
       <label style={{ fontSize:'23px', margin:'0 0 10px 20px'}}>Repository Type</label>
       <PieChart width={300} height={200}>
       <Pie data={repoData} cx={80} cy={75} innerRadius={40} outerRadius={80} fill={getRandomColor()}/>
-          <Tooltip />
+          <Tooltip isAnimationActive={true} />
         </PieChart>
       </div>
     </div>
   );
-  // return (
-  //   <PieChart width={800} height={400}>
-  //     {/* <Pie isAnimationActive={false} data={data01} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/> */}
-  //     <Pie data={repoData} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
-  //     <Tooltip/>
-  //    </PieChart>
-  // );
 };
 export default Profile;

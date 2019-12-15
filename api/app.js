@@ -16,7 +16,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
 app.use('/', indexRouter);
@@ -25,6 +24,15 @@ app.use('/', indexRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
+if(process.env.NODE_ENV==='production'){
+  app.use(express.static(path.join(__dirname, '../client/build')))
+
+  app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname+'../client/build/index.html'))
+  })
+}
 
 
 // error handler
