@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 export default class Header extends Component {
   state = {
-    showHeader: true
+    showHeader: true,
+    show:true,
   };
 
   handleEvent = () => {
@@ -10,6 +11,13 @@ export default class Header extends Component {
       this.setState({ showHeader: false });
     } else {
       this.setState({ showHeader: true });
+    }
+
+    if(window.scrollY>400){
+      this.setState({ show: false });
+    }
+    if(window.scrollY<400){
+      this.setState({ show: true });
     }
   };
 
@@ -38,7 +46,7 @@ export default class Header extends Component {
       >
         <div
           className="header_title"
-          style={{ color: this.state.showHeader ? "white" : "black" }}
+          style={{ color: this.state.showHeader ? "white" : "black", display: this.state.show ? "" :"none" }}
         >
           {this.renderLogo()}
           Git Originality
